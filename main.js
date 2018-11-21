@@ -12,6 +12,7 @@ expressServer.get('/', (req, res) => {
   for (let k in env) {
     env_vars.push(`${k}: ${env[k]} \n`)
   }
+  env_vars.push("VERSION: EXPRESS-SERVICE1");
   return res.send(env_vars);
 })
 

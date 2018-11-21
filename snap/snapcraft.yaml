@@ -1,4 +1,4 @@
-name: chuck-norris-app
+name: express-service1
 version: '1.0.0'
 summary: serving_env from snap
 description: |
@@ -10,7 +10,7 @@ confinement: strict
 
 apps:
   node-service:
-    command: bin/chuck-norris-app
+    command: bin/express-service1
     daemon: simple
     restart-condition: always
     plugs: [network-bind]
