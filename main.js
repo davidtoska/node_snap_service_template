@@ -3,11 +3,17 @@ const http = require('http');
 const express = require('express');
 
 const hostname = '0.0.0.0';
-const port = process.env.NODE_PORT || 3005;
+const port = process.env.NODE_PORT || 3007;
 const env = process.env;
 
 const expressServer = express();
-expressServer.get('/', (req, res) => res.send('Hello World!'))
+expressServer.get('/', (req, res) => {
+  let env_vars = [];
+  for (let k in env) {
+    env_vars.push(`${k}: ${env[k]} \n`)
+  }
+  return res.send(env_vars);
+})
 
 expressServer.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
