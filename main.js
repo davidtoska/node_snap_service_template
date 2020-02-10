@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 const express = require("express");
 
-const port = process.env.NODE_PORT || 3007;
+const port = process.env.NODE_PORT || 3008;
 const env = process.env;
 
 const expressServer = express();
+expressServer.use("/test", express.static("public"));
 expressServer.get("/", (req, res) => {
   let env_vars = [];
   for (let k in env) {
