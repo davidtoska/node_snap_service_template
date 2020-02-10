@@ -5,7 +5,7 @@ const port = process.env.NODE_PORT || 3008;
 const env = process.env;
 
 const expressServer = express();
-expressServer.use("/test", express.static("public"));
+expressServer.use("/public", express.static("public"));
 expressServer.get("/", (req, res) => {
   let env_vars = [];
   for (let k in env) {
